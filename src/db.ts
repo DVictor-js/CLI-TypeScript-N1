@@ -1,0 +1,10 @@
+import Database from "better-sqlite3";
+import { drizzle } from "drizzle-orm/better-sqlite3";
+
+import { uf, cidade, regiao } from "./schema";
+
+const sqlite = new Database("database.sqlite");
+
+export const db = drizzle(sqlite, {
+  schema: { uf, cidade, regiao },
+});
